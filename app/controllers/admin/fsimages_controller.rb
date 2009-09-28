@@ -5,7 +5,6 @@ class Admin::FsimagesController < ApplicationController
 
     respond_to do |format|
       format.html
-      format.xml  { render :xml => @fsimages }
     end
   end
 
@@ -14,7 +13,6 @@ class Admin::FsimagesController < ApplicationController
   
     respond_to do |format|
       format.html
-      format.xml  { render :xml => @image }
     end
   end
 

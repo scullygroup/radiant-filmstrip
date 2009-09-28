@@ -2,12 +2,10 @@ class CreateTables < ActiveRecord::Migration
   def self.up
     create_table :fsimages do |t|
       t.integer   :position
-      t.integer   :parent_id
-      t.integer   :order
-      t.string    :fsimage_file_name,    :string
-      t.string    :fsimage_content_type, :string
-      t.integer   :fsimage_file_size,    :integer
-      t.datetime  :fsimage_updated_at,   :datetime
+      t.string    :fsimage_file_name
+      t.string    :fsimage_content_type
+      t.integer   :fsimage_file_size
+      t.datetime  :fsimage_updated_at
       t.timestamps
     end
   end
