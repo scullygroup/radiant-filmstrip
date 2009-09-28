@@ -9,11 +9,15 @@ h1. Features
 
 h1. Requirements
 
+<p>*Imagemagick*<br />
+"http://www.imagemagick.org/script/index.php":http://www.imagemagick.org/script/index.php</p>
+
 <p>*SWFObject*<br />
-swfobject, "http://blog.deconcept.com/swfobject":http://blog.deconcept.com/swfobject</p>
+"http://blog.deconcept.com/swfobject":http://blog.deconcept.com/swfobject</p>
 
 <p>*Gems/Plugins*<br /> 
-paperclip, "http://github.com/thoughtbot/paperclip/tree/master":http://github.com/thoughtbot/paperclip/tree/master</p>
+Paperclip, "http://github.com/thoughtbot/paperclip/tree/master":http://github.com/thoughtbot/paperclip/tree/master</p>
+Rmagick, "http://rmagick.rubyforge.org":http://rmagick.rubyforge.org
 
 h1. How to Install
 
