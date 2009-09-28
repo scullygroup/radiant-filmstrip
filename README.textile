@@ -38,7 +38,6 @@ In your template, reference swfobject.js:
 Then, create a section like the following, wherever you want the filmstrip to appear:
 <pre><code>
   <div id="filmstrip"></div>
-
   	<script type="text/javascript" charset="utf-8">
   	var flashvars = {
   	    xml_path:"/filmstrip"
@@ -48,7 +47,6 @@ Then, create a section like the following, wherever you want the filmstrip to ap
         wmode: "transparent"
         };
     var attributes = {};
-
     swfobject.embedSWF("/swf/filmstrip.swf", "filmstrip", "100%", "290","9.0.0", "", flashvars, params, attributes);
     </script>
 </code></pre>
