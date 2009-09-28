@@ -1,16 +1,15 @@
 class Fsimage < ActiveRecord::Base
-  
-  has_attachment   :content_type => :image, 
-                   :storage => :file_system,
-                   :path_prefix => 'public/filmstrips', 
-                   :max_size => 500.kilobytes,
-                   :resize_to => '3000x290>',
-                   :thumbnails => { :thumb => '100x100>', :tom => '100x100>', :steve => '100x100>' }
+                   
+  has_attached_file :fsimage,
+                    :url => "/filmstrips/:id/:style/:basename.:extension",
+                    :styles => { :normal => '3000x290>', :thumb => '100x100>' }
 
-  validates_as_attachment
+  validates_attachment_presence     :fsimage
+  validates_attachment_content_type :fsimage, :content_type => ['image/jpeg', 'image/gif', 'image/png']
+
   
-  def self.find_by_size
-    find(:all, :order => "position", :conditions => ['thumbnail IS NULL'])
+  def self.find_by_position
+    find(:all, :order => "position")
   end
 
 end

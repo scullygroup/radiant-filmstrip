@@ -1,10 +1,10 @@
 class Admin::FsimagesController < ApplicationController
   
   def index
-    @fsimages = Fsimage.find_by_size
+    @fsimages = Fsimage.find_by_position
 
     respond_to do |format|
-      format.html # index.html.erb
+      format.html
       format.xml  { render :xml => @fsimages }
     end
   end
@@ -13,7 +13,7 @@ class Admin::FsimagesController < ApplicationController
     @image = Fsimage.find(params[:id])
   
     respond_to do |format|
-      format.html # show.html.erb
+      format.html
       format.xml  { render :xml => @image }
     end
   end
@@ -22,8 +22,7 @@ class Admin::FsimagesController < ApplicationController
     @image = Fsimage.new
     
     respond_to do |format|
-      format.html # new.html.erb
-      format.xml  { render :xml => @image }
+      format.html
     end
   end
 
@@ -33,16 +32,14 @@ class Admin::FsimagesController < ApplicationController
   
   def create
     @fsimage = Fsimage.new(params[:fsimage])
-    @fsimages = Fsimage.find_by_size
+    @fsimages = Fsimage.find_by_position
     
     respond_to do |format|
       if @fsimage.save
-        flash[:notice] = 'Fsimage was successfully created.'
+        flash[:notice] = 'Filmstrip was successfully created.'
         format.html { redirect_to :back }
-        format.xml  { render :xml => @fsimage, :status => :created, :location => @fsimage }
       else
         format.html { render :action => "index" }
-        format.xml  { render :xml => @fsimage.errors, :status => :unprocessable_entity }
       end
     end
   end
@@ -52,18 +49,16 @@ class Admin::FsimagesController < ApplicationController
 
     respond_to do |format|
       if @image.update_attributes(params[:image])
-        flash[:notice] = 'Fsimage was successfully updated.'
+        flash[:notice] = 'Filmstrip was successfully updated.'
         format.html { redirect_to(@image) }
-        format.xml  { head :ok }
       else
         format.html { render :action => "edit" }
-        format.xml  { render :xml => @image.errors, :status => :unprocessable_entity }
       end
     end
   end
 
   def update_positions
-    @fsimages = Fsimage.find_by_size
+    @fsimages = Fsimage.find_by_position
     @fsimages.each do |image|
       image.position = params['image-list'].index(image.id.to_s) + 1 
       image.save
@@ -77,7 +72,6 @@ class Admin::FsimagesController < ApplicationController
 
     respond_to do |format|
       format.html { redirect_to :back }
-      format.xml  { head :ok }
     end
   end
   

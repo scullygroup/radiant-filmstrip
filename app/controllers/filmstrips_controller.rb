@@ -5,12 +5,12 @@ class FilmstripsController < ApplicationController
   #radiant_layout 'Slideshow'
   
   def index
-    @fsimages = Fsimage.find_by_size
+    @fsimages = Fsimage.find_by_position
     render :layout => false
   end
   
   def show
-    @fsimages = Fsimage.find_by_size
+    @fsimages = Fsimage.find_by_position
     
     respond_to do |format|
       format.xml
@@ -18,7 +18,7 @@ class FilmstripsController < ApplicationController
   end
 
   def edit
-    @fsimages = Fsimage.find_by_size
+    @fsimages = Fsimage.find_by_position
   end
 
   private

@@ -1,0 +1,12 @@
+- include_javascript 'dragdrop'
+- include_stylesheet 'admin/application'
+%h1
+  Filmstrip
+%p
+  %em
+    Arrange the thumbnails by dragging them in the order you wish.
+#filmstrip-boxes
+  #left-images
+    %h2
+      Filmstrip
+    = render :partial => 'buckets', :locals => {:bucket => 'filmstrip'}

@@ -2,13 +2,13 @@
 # require_dependency 'application'
 
 class FilmstripExtension < Radiant::Extension
-  version "1.0"
+  version "1.1"
   description "A Radiant extension that allows you to create a sliding film strip."
   url "http://www.scullytown.com"
   
   define_routes do |map|
     
-  map.connect 'filmstrip', :controller => "filmstrips", :action => "show"     
+  map.connect '/filmstrip', :controller => "filmstrips", :action => "show"     
   map.resources :fsimages
     
     map.with_options(:controller => 'admin/fsimages') do |fsimage|
@@ -24,7 +24,7 @@ class FilmstripExtension < Radiant::Extension
   end
   
   def activate
-    admin.tabs.add "Home Filmstrip", "/admin/fsimages", :after => "Layouts", :visibility => [:all]
+    admin.tabs.add "Filmstrip", "/admin/fsimages", :after => "Layouts", :visibility => [:all]
     Page.send :include, FilmstripTags
     NoCachePage
   end

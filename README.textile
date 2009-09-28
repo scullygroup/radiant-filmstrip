@@ -24,24 +24,24 @@ Grab the extensions from GitHub and place it in vendor/extensions
 
 Run the following commands:
 <pre><code>
-  rake radiant:extenstions:filmstrip:migrate
-  rake radiant:extenstions:filmstrip:update
+  rake radiant:extensions:filmstrip:migrate
+  rake radiant:extensions:filmstrip:update
 </code></pre>
 
 h1. How to Use
 
-The filmstrip is pulled into Flash using a RESTful URL that provides the XML like so:
-<pre><code>/filmstrip/:slug</code></pre>
-
-<p>Where <code>:slug</code> is the page slug of the current Radiant Page.</p>
-
-<p>In your template, create a section like the following:
+<p>In your template, reference swfobject.js:
+<pre><code>
+  <script src="/javascripts/swfobject.js" type="text/javascript"></script>
+</code></pre>
+  
+  Then, create a section like the following, wherever you want the filmstrip to appear:
   <pre><code>
-    <div id="slideshow"></div>
+    <div id="filmstrip"></div>
 
     	<script type="text/javascript" charset="utf-8">
     	var flashvars = {
-    	    xml_path:"/filmstrip/<r:slug/>"
+    	    xml_path:"/filmstrip"
     	    };
       var params = {
           menu: "false",
@@ -49,8 +49,8 @@ The filmstrip is pulled into Flash using a RESTful URL that provides the XML lik
           };
       var attributes = {};
 
-      swfobject.embedSWF("swf/slideshow.swf", "slideshow", "100%", "290","9.0.0", "", flashvars, params, attributes);
+      swfobject.embedSWF("/swf/filmstrip.swf", "filmstrip", "100%", "290","9.0.0", "", flashvars, params, attributes);
       </script>
   </code></pre>
   
-  <p>The code above uses SWFObject to create the Flash embed code, using XML to populate the filmstrip.  This pulls all images for the current page.</p>
+  <p>The code above uses SWFObject to create the Flash embed code, using XML to populate the filmstrip.</p>
