@@ -9,7 +9,7 @@ h1. Features
 
 h1. Requirements
 
-<p>*SWFObject*</br />
+<p>*SWFObject*<br />
 swfobject, "http://blog.deconcept.com/swfobject":http://blog.deconcept.com/swfobject</p>
 
 <p>*Gems/Plugins*<br /> 
