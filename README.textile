@@ -35,22 +35,22 @@ h1. How to Use
   <script src="/javascripts/swfobject.js" type="text/javascript"></script>
 </code></pre>
   
-  Then, create a section like the following, wherever you want the filmstrip to appear:
-  <pre><code>
-    <div id="filmstrip"></div>
+Then, create a section like the following, wherever you want the filmstrip to appear:
+<pre><code>
+  <div id="filmstrip"></div>
 
-    	<script type="text/javascript" charset="utf-8">
-    	var flashvars = {
-    	    xml_path:"/filmstrip"
-    	    };
-      var params = {
-          menu: "false",
-          wmode: "transparent"
-          };
-      var attributes = {};
+  	<script type="text/javascript" charset="utf-8">
+  	var flashvars = {
+  	    xml_path:"/filmstrip"
+  	    };
+    var params = {
+        menu: "false",
+        wmode: "transparent"
+        };
+    var attributes = {};
 
-      swfobject.embedSWF("/swf/filmstrip.swf", "filmstrip", "100%", "290","9.0.0", "", flashvars, params, attributes);
-      </script>
-  </code></pre>
+    swfobject.embedSWF("/swf/filmstrip.swf", "filmstrip", "100%", "290","9.0.0", "", flashvars, params, attributes);
+    </script>
+</code></pre>
   
   <p>The code above uses SWFObject to create the Flash embed code, using XML to populate the filmstrip.</p>
