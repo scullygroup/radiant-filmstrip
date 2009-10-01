@@ -23,7 +23,7 @@ h1. How to Install
 
 Grab the extensions from GitHub and place it in vendor/extensions
 <pre><code>
-  git clone git@github.com:scullygroup/radiant-filmstrip.git vendor/extensions/filmstrip
+  git clone git://github.com/scullygroup/radiant-filmstrip.git vendor/extensions/filmstrip
 </code></pre>
 
 Run the following commands:
@@ -33,6 +33,13 @@ Run the following commands:
 </code></pre>
 
 h1. How to Use
+
+Be sure to vendor Paperclip in environment.rb
+<pre><code>
+config.gem 'thoughtbot-paperclip',
+           :lib => 'paperclip',
+           :source => 'http://gems.github.com'
+</pre></code>
 
 In your template, reference swfobject.js:
 <pre><code>
