@@ -63,3 +63,5 @@ Then, create a section like the following, wherever you want the filmstrip to ap
 </code></pre>
   
   <p>The code above uses SWFObject to create the Flash embed code, using XML to populate the filmstrip.</p>
+  
+Copyright (c) 2009 Scully Group, released under the MIT License
