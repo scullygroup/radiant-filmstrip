@@ -13,6 +13,5 @@ ActionController::Routing::Routes.draw do |map|
     fsimage.fsimage_remove          'admin/fsimages/remove/:id',  :action => 'destroy'
     fsimage.fsimage_updatepos       'admin/fsimages/update_positions/:id',  :action => 'update_positions'
   end
-end
 
 end
